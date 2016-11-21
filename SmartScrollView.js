@@ -157,7 +157,8 @@ class SmartScrollView extends Component {
       zoomScale,
       showsVerticalScrollIndicator,
       contentInset,
-      onScroll
+      onScroll,
+      bounces,
     }                = this.props;
     let inputIndex   = 0;
     const smartClone = (element, i) => {
@@ -242,7 +243,7 @@ class SmartScrollView extends Component {
             zoomScale                        = { zoomScale }
             showsVerticalScrollIndicator     = { showsVerticalScrollIndicator }
             keyboardShouldPersistTaps        = { true }
-            bounces                          = { false }
+            bounces                          = { bounces }
           >
             {content}
           </ScrollView>
@@ -267,6 +268,7 @@ SmartScrollView.propTypes = {
   contentInset:                 PropTypes.object,
   onScroll:                     PropTypes.func,
   onRefFocus:                   PropTypes.func,
+  bounces:                      PropTypes.bool,
 };
 
 SmartScrollView.defaultProps = {
